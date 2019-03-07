@@ -1,0 +1,52 @@
+<div class="checkout container">
+    <div class="row heading-container">
+      <div class="col-md-6">
+        <h1>Checkout</h1>
+      </div>
+      <div class="col-md-6 empty-cart-btn-container">
+        <button class="btn btn-primary" (click)="toproductlist()" style="float: right; margin: 10px;">Continue Shopping</button>
+        <button class="btn btn-primary" [disabled]="!cartItems.length" (click)="handleEmptyCart()" style="float: right; margin: 10px;">Empty Cart</button>
+      </div>
+    </div>
+    <ng-container *ngFor="let item of cartItems">
+        <div class="card">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="../../../assets/images/IPhone _X.jpg" style="width: 100%" />
+              </div>
+              <div class="col-md-8">
+                <p>{{item.tenSP}}</p>
+                <p><strong>Price per {{item.DVT}}: </strong>{{item.giaBan}}</p>
+                <p><strong>Description : </strong>{{item.moTaSP}}</p>
+                <p>
+                  <strong>Change Quantity: </strong>
+                  <select [ngModel]="getQuantity(item.idsp)" (change)="handleQuantityChange($event, item.idsp)">
+                    <option *ngFor="let option of getQuantityList(item.idsp)" [value]="option">{{option}}</option>
+                  </select>
+                </p>
+                <button (click)="showDetail(item)" class="btn btn-primary" style="margin-right: 5px;">More Info</button>
+                <button (click)="handleRemoveItem(item.idsp)" class="btn btn-primary" style="margin-right: 5px;">Remove item</button>
+              </div>
+            </div>
+        </div>
+        <br>
+      </ng-container>
+  
+      <ng-container *ngIf="cartItems.length">
+            <div class="row" style="background: lightgrey;">
+              <div class="col-md-10">
+                <p><strong>Total Price: </strong></p>
+              </div>
+              <div class="col-md-2">
+                <p>{{totalPrice}} $</p>
+              </div>
+            </div>
+          <button class="btn btn-primary" (click)="handleCheck()" style="display: block; margin: 0 auto;">Continue to checkout</button>
+          <!-- <button (click)="getcart()">check</button> -->
+      </ng-container>
+  
+      <ng-container *ngIf="!cartItems || !cartItems.length">
+              <p>Oh Ho! Your cart is empty!</p>
+              <p><a routerLink="">Click here</a> to browse through our collection.</p>
+      </ng-container>
+      </div>

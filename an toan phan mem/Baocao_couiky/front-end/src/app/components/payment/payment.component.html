@@ -1,0 +1,56 @@
+<ngx-loading-bar [includeSpinner]='false'></ngx-loading-bar>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+<div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form class="form-horizontal">
+          <div class="col-50">
+              <h3>Payment</h3>
+              <label for="fname">Accepted Cards</label>
+              <img class="img-responsive cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
+              <div class="form-group">
+                <label for="cname">Name on Card</label>
+                <input class="form-control" type="text" id="cname" name="cardname" placeholder="John More Doe" [(ngModel)]="payment.cardname" [formControl]="form.controls['cardname']">
+              </div>
+              <p *ngIf="form.controls['cardname'].hasError('required') && form.controls['cardname'].touched" class="text-danger" >Card Name is required</p>
+              <div class="form-group">
+                <label for="ccnum">Credit card number</label>
+              <input class="form-control"  id="cc-number" type="tel" autocomplete="cc-number" ccNumber name="cardnumber" placeholder="1111 2222 3333 4444" [(ngModel)]="payment.cardnumber" [formControl]="form.controls['cardnumber']">
+              </div>
+              <p *ngIf="form.controls['cardnumber'].hasError('required') && form.controls['cardnumber'].touched" class="text-danger" >Card Number is required</p>
+              <!-- <p *ngIf="!form.controls['cardname'].valid && form.controls['cardnumber'].touched" class="alert alert-danger">Credit Card is invalid</p> -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="exp">Expiration Date</label>
+                    <input id="cc-exp-date" type="tel" autocomplete="cc-exp" ccExp class="form-control" type="text" name="exp" placeholder="MM / YYYY" [(ngModel)]="payment.exp" [formControl]="form.controls['exp']">
+                  </div>
+                  <p *ngIf="form.controls['exp'].hasError('required') && form.controls['exp'].touched" class="text-danger" >Expiration Date is required</p>
+                  <!-- <p *ngIf="!form.controls['exp'].valid && form.controls['exp'].touched" class="alert alert-danger">Expiration Date is required</p> -->
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input class="form-control" type="text"  id="cc-cvc" type="tel" autocomplete="off" ccCVC name="cvv" placeholder="352" [(ngModel)]="payment.cvv" [formControl]="form.controls['cvv']">
+                  </div>
+                  <p *ngIf="form.controls['cvv'].hasError('required') && form.controls['cvv'].touched" class="text-danger" >CCV is required</p>
+                  <!-- <p *ngIf="!form.controls['cvv'].valid && form.controls['cvv'].touched" class="alert alert-danger">CCV is required</p> -->
+                </div>
+              </div>
+            </div>  
+          </form>
+          <input type="submit" value="Buy Now" class="btn btn-success">
+           <!-- [disabled]="!form.valid"> -->
+          <div class="errors" *ngIf="submitted">
+            <div *ngIf="form.controls['cardname'].hasError('required')" class="alert alert-danger">Card Name required</div>
+            <div *ngIf="!form.controls['cardnumber'].valid" class="alert alert-danger">Credit Card is invalid</div>
+            <div *ngIf="!form.controls['exp'].valid" class="alert alert-danger">Expiration Date is invalid</div>
+            <div *ngIf="!form.controls['cvv'].valid" class="alert alert-danger">CVV is invalid</div>
+          </div>
+          <div *ngIf="!isPay" class="alert alert-danger">Yor cart is empty. Please buy some thing
+              <p><a routerLink="">Click here</a> to browse through our collection.</p>
+          </div>
+    </div>
+  </div>
+</div>
+</form>

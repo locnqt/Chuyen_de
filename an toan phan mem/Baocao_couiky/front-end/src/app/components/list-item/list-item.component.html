@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Products List</h1>
+  <!-- <div *ngIf="!isLoading" class="container-fluid"> -->
+    <div class="row">
+      <div *ngFor="let item of itemsList| paginate: { itemsPerPage: 6, currentPage: page }; let i = index" class="col-md-4">
+          <div class="card" *ngIf="item" (click)="handleCardClick($event,item)">
+                      <img class="card-img-top" src="../../../assets/images/IPhone _X.jpg" style="width: 100%;" [alt]="item.label" />
+                    <div class="card-body">
+                      <h4 *ngIf="item.tenSP">
+                        <strong>{{item.tenSP}}</strong>
+                      </h4>
+                      <p *ngIf="item.giaBan">
+                        <strong>Price: </strong>{{item.giaBan}} $
+                      </p>
+                      <button class="btn btn-primary" (click)="handleCardClick($event,item)">More Info</button>
+                    </div>
+            </div>
+        <!-- <app-items-list-item [item]="item" (onItemClick)="handleItemClick($event)" (onAddToCartClick)="handleAddToCardClick($event)"></app-items-list-item> -->
+      </div>
+    </div>
+    <pagination-controls class="pager" (pageChange)="page = $event"></pagination-controls>
+  <!-- </div> -->
+</div>

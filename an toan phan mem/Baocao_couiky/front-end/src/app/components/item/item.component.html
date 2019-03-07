@@ -1,0 +1,21 @@
+<ngx-loading-bar [includeSpinner]='false'></ngx-loading-bar>
+<div class="container">
+    <h1>Product Details</h1>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-5">
+          <!-- <img [src]="../../../assets/images/shoes.png" alt="Card image" style="width:100%"/> -->
+          <img src="../../../assets/images/IPhone _X.jpg" style="width: 100%;" alt="Card image" />
+        </div>
+        <div class="col-md-7">
+          <br>
+          <p><strong>Label</strong>: {{tenSP}}</p>
+          <p><strong>Price per {{dvt}}</strong>: {{giaBan}} $</p>
+          <p><strong>Items Available</strong>: {{getItemsAvailable()}}</p>
+          <p><strong>Description</strong>: {{moTaSP}}</p>
+          <button (click)="handleAddToCardClick()" [disabled]="!getItemsAvailable()" class="btn btn-primary" style="margin-right: 5px;">Add To Cart</button>
+          <button (click)="handleShowCart()" class="btn btn-primary" style="margin-right: 5px;">Show Cart</button>
+          <button class="btn btn-primary" (click)="toproductlist()">Continue Shopping</button></div>
+      </div>
+    </div>
+</div>

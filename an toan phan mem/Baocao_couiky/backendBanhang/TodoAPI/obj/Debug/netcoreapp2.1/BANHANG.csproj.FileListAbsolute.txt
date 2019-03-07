@@ -1,0 +1,14 @@
+F:\TodoAPI\backendBanhang\TodoAPI\obj\Debug\netcoreapp2.1\BANHANG.csprojAssemblyReference.cache
+F:\TodoAPI\backendBanhang\TodoAPI\obj\Debug\netcoreapp2.1\BANHANG.csproj.CoreCompileInputs.cache
+F:\TodoAPI\backendBanhang\TodoAPI\obj\Debug\netcoreapp2.1\BANHANG.RazorAssemblyInfo.cache
+F:\TodoAPI\backendBanhang\TodoAPI\obj\Debug\netcoreapp2.1\BANHANG.RazorAssemblyInfo.cs
+F:\TodoAPI\backendBanhang\TodoAPI\obj\Debug\netcoreapp2.1\BANHANG.AssemblyInfoInputs.cache
+F:\TodoAPI\backendBanhang\TodoAPI\obj\Debug\netcoreapp2.1\BANHANG.AssemblyInfo.cs
+F:\TodoAPI\backendBanhang\TodoAPI\bin\Debug\netcoreapp2.1\BANHANG.deps.json
+F:\TodoAPI\backendBanhang\TodoAPI\bin\Debug\netcoreapp2.1\BANHANG.runtimeconfig.json
+F:\TodoAPI\backendBanhang\TodoAPI\bin\Debug\netcoreapp2.1\BANHANG.runtimeconfig.dev.json
+F:\TodoAPI\backendBanhang\TodoAPI\bin\Debug\netcoreapp2.1\BANHANG.dll
+F:\TodoAPI\backendBanhang\TodoAPI\bin\Debug\netcoreapp2.1\BANHANG.pdb
+F:\TodoAPI\backendBanhang\TodoAPI\obj\Debug\netcoreapp2.1\BANHANG.RazorTargetAssemblyInfo.cache
+F:\TodoAPI\backendBanhang\TodoAPI\obj\Debug\netcoreapp2.1\BANHANG.dll
+F:\TodoAPI\backendBanhang\TodoAPI\obj\Debug\netcoreapp2.1\BANHANG.pdb
