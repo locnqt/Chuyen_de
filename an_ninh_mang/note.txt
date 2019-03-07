@@ -1,0 +1,36 @@
+sudo netstat -plnt
+client:
+sudo /etc/init.d/nagios-nrpe-server stop
+sudo /etc/init.d/nagios-nrpe-server start
+sudo /etc/init.d/nagios-nrpe-server restart
+sudo systemctl restart nagios-nrpe-server 
+server:
+sudo systemctl restart nagios3 
+
+cl: perl /usr/lib/nagios/plugins/checkchanged.pl 
+sr: sudo /usr/lib/nagios/plugins/check_nrpe -H 192.168.230.136 -c checkchanged_perl
+
+sudo apt-get install cpanm
+cpanm -i Digest::SHA1
+
+sudo apt-get remove nagios-nrpe-server
+sudo apt-get remove --auto-remove nagios-nrpe-server
+sudo apt-get purge nagios-nrpe-server
+sudo apt-get purge --auto-remove nagios-nrpe-server
+
+sudo apt install nagios3 nagios-nrpe-plugin
+sudo apt update
+sudo apt install apache2
+sudo apt install php php-cgi libapache2-mod-php php-common php-pear php-mbstring
+sudo apt install nagios3 nagios-plugins-basic
+sudo gedit /etc/nagios3/nagios.cfg
+sudo gedit /etc/nagios3/apache2.conf
+sudo chgrp -R www-data /var/lib/nagios3 
+sudo root@dlp:~# chmod 750 /var/lib/nagios3/rw
+sudo systemctl restart nagios3.service
+sudo systemctl restart apache2.service
+
+sudo useradd nrpe && update-rc.d nagios-nrpe-server defaults
+sudo apt-get -y install nagios-nrpe-server
+sudo /etc/nagios/nrpe.cfg
+sudo
