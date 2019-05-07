@@ -1,0 +1,13 @@
+<div id="header">
+    <a routerLink="/">
+      <img class="logo" src="../../../assets/images/logo.png" />
+    </a><a *ngIf="!isAuthenticated()" class="lr" style="color: white;" routerLink="/login">Login</a>
+       <!-- / <a routerLink="/register">Register</a> -->
+    <div *ngIf="isAuthenticated()">
+      <a href="" class="lr" (click)="Logout()" style="margin-right: 10px;">Logout</a>
+      <a routerLink="/cart" class="btn btn-primary btn-checkout" style="margin-right: 10px;">
+        <i class="fa fa-shopping-cart"></i>
+      </a>
+    </div>
+</div>
+  

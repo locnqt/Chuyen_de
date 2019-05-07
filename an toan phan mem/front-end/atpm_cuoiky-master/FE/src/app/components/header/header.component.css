@@ -1,0 +1,18 @@
+#header{
+    height: 54px;
+    padding: 10px;
+    background: indigo;
+  }  
+#header .logo{
+  height: 40px;
+  float: left;
+}  
+#header .btn-checkout{
+  width: 100px;
+  float: right;
+}
+#header .lr{
+  color: white;
+  float: right;
+  font-size: 20px;
+}
